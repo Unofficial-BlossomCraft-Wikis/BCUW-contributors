@@ -24,6 +24,7 @@ concurrency:
 
 jobs:
   # Single deploy job since we're just deploying
+  if: github.actor == 'github-actions[bot]' || github.event_name == 'workflow_dispatch' || github.event_name == 'push'
   deploy:
     environment:
       name: github-pages
