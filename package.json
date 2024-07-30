@@ -1,0 +1,18 @@
+{
+  "name": "bcuw-contributors",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "collect-stats": "tsm ./scripts/collect-stats.ts"
+  },
+  "dependencies": {
+    "@octokit/core": "^6.1.2",
+    "@octokit/types": "^13.5.0",
+    "p-retry": "^6.2.0",
+    "tsm": "^2.3.0",
+    "typescript": "^5.4.5"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0"
+  }
+}
