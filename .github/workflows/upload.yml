@@ -25,8 +25,8 @@ concurrency:
 jobs:
   # Single deploy job since we're just deploying
   deploy:
-    # skip if the commit message contains [ci]
-    if: github.event.head_commit.message != '[ci]'
+    # skip if the commit message contains [ci] or [no build]
+    if: github.event.head_commit.message != '[ci]' && github.event.head_commit.message != '[no build]'
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
