@@ -29,3 +29,7 @@ jobs:
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_message: 'ci: Collect stats'
+
+      - name: Trigger Deploy
+        if: github.repository_owner == 'Unofficial-BlossomCraft-Wikis'
+        uses: ./upload.yml
