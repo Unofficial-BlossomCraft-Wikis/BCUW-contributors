@@ -24,8 +24,8 @@ concurrency:
 
 jobs:
   # Single deploy job since we're just deploying
-  if: github.actor == 'github-actions[bot]' || github.event_name == 'workflow_dispatch' || github.event_name == 'push'
   deploy:
+    if: github.actor == 'github-actions[bot]' || github.event_name == 'workflow_dispatch' || github.event_name == 'push'
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
