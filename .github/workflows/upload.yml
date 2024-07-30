@@ -25,7 +25,8 @@ concurrency:
 jobs:
   # Single deploy job since we're just deploying
   deploy:
-    if: github.actor == 'github-actions[bot]' || github.event_name == 'workflow_dispatch' || github.event_name == 'push'
+    # skip if the commit message contains [ci]
+    if: github.event.head_commit.message != '[ci]'
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
